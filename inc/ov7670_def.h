@@ -18,6 +18,8 @@
 extern "C" {
 #endif
 
+#include <stdint.h>
+
 /**
  * @brief OV7670 status structure definition
  */
@@ -26,6 +28,15 @@ typedef enum {
     OV7670_ERROR = 0x01U
 
 } ov7670_status_t;
+
+/**
+ * @brief OV7670 handle structure definition
+ */
+typedef struct {
+    void *i2c_handle;     /*!< I2C handle */
+    uint32_t i2c_timeout; /*!< I2C timeout */
+
+} ov7670_t;
 
 #ifdef __cplusplus
 }
